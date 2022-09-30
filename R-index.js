@@ -16,7 +16,7 @@
                         getcontent.addEventListener('change', function(event) { 
                             let resultat1 = getcontent.value;
                             console.log(resultat1);
-                        
+                            
                         });
                         }
                         const validebtn = document.getElementById('envoyer');
@@ -24,7 +24,7 @@
                         if(validebtn){
                         validebtn.addEventListener('click', function(event) { 
                             event.preventDefault();
-                        
+                            
                 //alert('welcome');
                 
                 function contentBlog(title,content,id){
@@ -49,6 +49,7 @@
 
                 const eltp1 = document.createElement('p');
                 eltp1.classList.add('delete');
+                eltp1.setAttribute('id','dadeled');
                 
 
                 const eltp2 = document.createElement('p');
@@ -57,11 +58,11 @@
                 const eltinput = document.createElement('input');
                 
 
-                const eltI = document.createElement('i');
+               const eltI = document.createElement('i');
+              //const eltIdad = document.getElementById('dadeled');
                  /************* delete blog ****************/
-                 ;
+                 
                  eltI.addEventListener('click', function(event){
-
                  alert('Etes vous sur de vouloir supprimer ?');
                  elt.remove();
                  });
@@ -100,6 +101,8 @@
                     }
                 });
                 
+               
+               
 
                 /************ vérification de champs vide **************/
                 
@@ -107,15 +110,26 @@
                     
                     alert('veillez remplir tous les champs')
                 }else{
+                    
                 idIncre++;
                 eltH1.innerHTML=title +' '+ 'n°' + idIncre ;
                 eltp.innerHTML=content;
-         
+               
+                
+                getusername.value = '';
+                getcontent.value = '';
+                
                 console.log(elt);
+
                 return elt;
+                
                 }
+                 /***************reset*******************/
+                 
 
                 }
+               
+
                 let resul = contentBlog();
 
                 let lass = document.getElementsByTagName('body');
@@ -124,5 +138,7 @@
                     
                         })
                         };
+
+                       
 
                     
